@@ -1,0 +1,22 @@
+# ===============================================================
+# HOW TO USE THIS PROJECT ON DEBIAN/LINUX:
+# 
+# 1. Create the environment (habe ich für directory referee schon gemacht):
+#    python3 -m venv .venv
+#
+# 2. Activate the environment:
+#    source .venv/bin/activate
+#
+# 3. Install these requirements:
+#    pip install -r requirements.txt
+#
+# 4. To stop working:
+#    deactivate
+# ===============================================================
+
+# --- Packages ---
+beautifulsoup4    # For parsing HTML (from bs4 import BeautifulSoup)
+selenium          # For browser automation
+webdriver-manager # To automatically download/manage GeckoDriverManager
+
+

@@ -1,0 +1,11 @@
+# Python virtual environment
+.venv/
+__pycache__/
+*.py[cod]
+
+# Selenium / Logs
+geckodriver.log
+ghostdriver.log
+
+# Data files (Optional: keep them if they are part of the repo)
+*.csv
