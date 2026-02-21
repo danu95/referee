@@ -1,0 +1,203 @@
+<html>
+ <head>
+  <title>
+   Anmelden - clubcorner.ch
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="/sfv-logo.png" rel="icon"/>
+  <script src="/assets/application_bootstrap_2-e7a4e2bd3ca1be1cfc6c0cc89651e4cb43600f64436f72fd51ae1d108bd3496d.js">
+  </script>
+  <script crossorigin="anonymous" src="/vite/assets/application_bootstrap_2-B133amCS.js" type="module">
+  </script>
+  <link href="/vite/assets/application_bootstrap_2-DvWgSWBF.css" media="screen" rel="stylesheet"/>
+  <script src="/assets/locales/de-450d300b00e68bdbc7f1e32d147897ef055a1bc147366458efa9db3890a5bceb.js">
+  </script>
+  <script src="/assets/jquery-ui-timepicker/de-df5ec27c4a89804205ca0fbab55297a6cec1e18fecaf8ac5ed968726ff343465.js">
+  </script>
+  <link href="/assets/application_bootstrap_2-dd7ce7339f9cf146d512a102effbdba2e12d6e4a0f3d8d05952554358c541461.css" media="screen" rel="stylesheet"/>
+  <link href="/assets/print-ecc64fc5f0901ceed5b6193d16d18d5525a4c476165a7fedf17f26298aa7e479.css" media="print" rel="stylesheet"/>
+  <script async="async" data-turbo-temporary="true" data-turbo-track="reload" defer="defer" src="https://challenges.cloudflare.com/turnstile/v0/api.js">
+  </script>
+  <script>
+   // Callback to enable the Devise session submit button when Turnstile returns a token
+  function enableDeviseSessionSubmit(token) {
+    const btn = document.getElementById('devise-session-submit');
+    if (btn) { btn.disabled = false; }
+  }
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2WZS73BP50">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2WZS73BP50');
+  </script>
+  <meta content="authenticity_token" name="csrf-param"/>
+  <meta content="l3sFSomJy4437bx7M1Zc3HvleMpyDGW4fYBllRufh_44HyrXeqT6e7Al5GI-PthG4pPP5Y1kdgj2MivZ15qSmQ" name="csrf-token"/>
+  <meta content="de" name="locale"/>
+  <!-- 8fb0b8b701f9
+ -->
+  <style>
+   :is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}
+  </style>
+ </head>
+ <body class="bootstrap-2 devise_overrides-sessions new" style="">
+  <div class="navbar navbar-fixed-top navbar-inverse">
+   <div class="navbar-inner">
+    <div class="container">
+     <a class="brand" href="/">
+      <img src="/assets/navbar-brand-462626d82b9b348c9bf57288f636ea596947466fb9d69e2f404532dc414f43ed.png"/>
+     </a>
+     <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+     </a>
+     <ul class="nav pull-right">
+      <li>
+       <div class="nav-collapse collapse">
+        <ul class="nav pull-right nav-menus">
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+           <i class="icon-sfv-hilfe icon-white">
+           </i>
+           Hilfe
+           <b class="caret">
+           </b>
+          </a>
+          <ul class="dropdown-menu">
+           <li>
+            <a alt="Hilfe" href="https://org.football.ch/clubcorner-ch/clubcorner-ch.aspx" target="_blank" title="Hilfe">
+             <i class="icon-book">
+             </i>
+             SFV Hilfeseite
+            </a>
+           </li>
+           <li>
+            <a alt="Supportanfrage-Formular" href="https://customer.support.football.ch/helpcenter/clubdesk/portal/15/group/61/create/180" target="_blank" title="Supportanfrage-Formular">
+             <i class="icon-envelope">
+             </i>
+             Supportanfrage-Formular
+            </a>
+           </li>
+           <li>
+            <a alt="Anfrage Spielerkontrolle SFV" href="https://org.football.ch/Spielerkontrolle/Informationen.aspx" target="_blank" title="Anfrage Spielerkontrolle SFV">
+             <i class="icon-envelope">
+             </i>
+             Anfrage Spielerkontrolle SFV
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <ul class="nav pull-right status">
+         <li class="ajax-loader" data-error="Es ist ein unerwarteter Fehler aufgetreten:">
+          <img src="/assets/ajax-loader-d2cc05f330fde8413f7201ced151011451d4963a65af9bde09ed20c0c3de8975.gif"/>
+         </li>
+        </ul>
+       </div>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div class="main">
+   <div class="container">
+    <div class="row">
+     <div class="span6 offset3" id="login-box">
+      <div class="page-header">
+       <a class="sidebar-collapse pull-right" data-original-title="Grösse ändern" data-placement="left" href="#" rel="tooltip" style="display: none;">
+       </a>
+       <h1 id="content-titel">
+        Anmelden
+       </h1>
+      </div>
+      <form accept-charset="UTF-8" action="/users/sign_in" class="simple_form form-horizontal" id="new_user" method="post" novalidate="novalidate">
+       <input autocomplete="off" name="authenticity_token" type="hidden" value="l3sFSomJy4437bx7M1Zc3HvleMpyDGW4fYBllRufh_44HyrXeqT6e7Al5GI-PthG4pPP5Y1kdgj2MivZ15qSmQ"/>
+       <div class="control-group email optional user_email">
+        <label class="control-label email optional control-label" for="user_email">
+         E-Mail
+        </label>
+        <div class="controls">
+         <input autofocus="autofocus" class="string email optional span3" id="user_email" name="user[email]" style="" type="text"/>
+        </div>
+       </div>
+       <div class="control-group password optional user_password">
+        <label class="control-label password optional control-label" for="user_password">
+         Passwort
+        </label>
+        <div class="controls">
+         <input class="password optional span3" id="user_password" name="user[password]" type="password"/>
+        </div>
+       </div>
+       <div class="control-group boolean optional user_remember_me">
+        <label class="control-label boolean optional control-label" for="user_remember_me">
+         Angemeldet bleiben
+        </label>
+        <div class="controls">
+         <input autocomplete="off" name="user[remember_me]" type="hidden" value="0"/>
+         <input class="boolean optional" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"/>
+        </div>
+       </div>
+       <div class="control-group">
+        <div class="controls">
+         <div class="cloudflare-turnstile">
+          <div class="cf-turnstile" data-action="other" data-callback="enableDeviseSessionSubmit" data-sitekey="0x4AAAAAAB0yEiwfUIAcU3oA" data-size="normal" data-theme="auto">
+           <div>
+            <input id="cf-chl-widget-hxau9_response" name="cf-turnstile-response" type="hidden" value=""/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="form-actions">
+        <input class="btn btn-success btn-large" data-disable-with="Anmelden" disabled="disabled" id="devise-session-submit" name="commit" type="submit" value="Anmelden"/>
+       </div>
+      </form>
+      <ul class="shared-links">
+       <li>
+        <a href="/users/password/new">
+         Passwort vergessen?
+        </a>
+       </li>
+       <li>
+        <a href="/users/confirmation/new">
+         Keinen Aktivierungscode erhalten?
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   scroll_to_error();
+  
+  function markiereSidebarAktiv() {
+    var selector = $('.sidebar .sb-nav a[href="' + window.location.pathname + window.location.search + '"]');
+    if (selector.size() > 0) {
+      selector.parents().addClass('active');
+      return;
+    }
+    var aktuellerPfad = ["", "users", "sign_in"];
+    while(aktuellerPfad.length > 0) {
+      selector = $('div.sidebar .sb-nav a[href="' + aktuellerPfad.join('/') + '"]');
+      if (selector.size() > 0) {
+        selector.parents().addClass('active');
+        break;
+      } else {
+        aktuellerPfad.pop();
+      }
+    }
+  }
+  $(document).ready(function() {
+    markiereSidebarAktiv();
+  });
+  </script>
+  <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"0bb2758316c041879c8c058dc21b089c","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015">
+  </script>
+  <protonpass-root-76cc data-protonpass-role="root" data-protonpass-theme="os" popover="manual">
+  </protonpass-root-76cc>
+ </body>
+</html>

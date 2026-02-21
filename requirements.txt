@@ -18,5 +18,5 @@
 beautifulsoup4    # For parsing HTML (from bs4 import BeautifulSoup)
 selenium          # For browser automation
 webdriver-manager # To automatically download/manage GeckoDriverManager
-
+undetected_chromedriver # Um die Clouflare checks zu umgehen
 
