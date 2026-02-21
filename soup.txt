@@ -31,13 +31,10 @@
    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2WZS73BP50');
   </script>
   <meta content="authenticity_token" name="csrf-param"/>
-  <meta content="l3sFSomJy4437bx7M1Zc3HvleMpyDGW4fYBllRufh_44HyrXeqT6e7Al5GI-PthG4pPP5Y1kdgj2MivZ15qSmQ" name="csrf-token"/>
+  <meta content="o9v8gts9v5UKLNOUYJ5XKW57FPagEW0HGaeJu2jwgc2_tqXylJYeZWP7bc2zD9YwvlLbPVTmTx6uypQMHjMwRQ" name="csrf-token"/>
   <meta content="de" name="locale"/>
-  <!-- 8fb0b8b701f9
+  <!-- 3327d7d72491
  -->
-  <style>
-   :is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}
-  </style>
  </head>
  <body class="bootstrap-2 devise_overrides-sessions new" style="">
   <div class="navbar navbar-fixed-top navbar-inverse">
@@ -114,13 +111,13 @@
        </h1>
       </div>
       <form accept-charset="UTF-8" action="/users/sign_in" class="simple_form form-horizontal" id="new_user" method="post" novalidate="novalidate">
-       <input autocomplete="off" name="authenticity_token" type="hidden" value="l3sFSomJy4437bx7M1Zc3HvleMpyDGW4fYBllRufh_44HyrXeqT6e7Al5GI-PthG4pPP5Y1kdgj2MivZ15qSmQ"/>
+       <input autocomplete="off" name="authenticity_token" type="hidden" value="o9v8gts9v5UKLNOUYJ5XKW57FPagEW0HGaeJu2jwgc2_tqXylJYeZWP7bc2zD9YwvlLbPVTmTx6uypQMHjMwRQ"/>
        <div class="control-group email optional user_email">
         <label class="control-label email optional control-label" for="user_email">
          E-Mail
         </label>
         <div class="controls">
-         <input autofocus="autofocus" class="string email optional span3" id="user_email" name="user[email]" style="" type="text"/>
+         <input autofocus="autofocus" class="string email optional span3" id="user_email" name="user[email]" type="text"/>
         </div>
        </div>
        <div class="control-group password optional user_password">
@@ -145,14 +142,14 @@
          <div class="cloudflare-turnstile">
           <div class="cf-turnstile" data-action="other" data-callback="enableDeviseSessionSubmit" data-sitekey="0x4AAAAAAB0yEiwfUIAcU3oA" data-size="normal" data-theme="auto">
            <div>
-            <input id="cf-chl-widget-hxau9_response" name="cf-turnstile-response" type="hidden" value=""/>
+            <input id="cf-chl-widget-i7vmz_response" name="cf-turnstile-response" type="hidden" value="0.Ufl0AneLUX8PIj6-j_Cys9E4NTNARMSD2wyEp5-m_y0Smhl4N-6yk7UacDoRHH4OpyZCO0nmDAUBd1PCHNAll2Fox_Ms93GmrEUekHZKqmRIxSvvF7t2DmIjUL9yeddKksNG_EZrqhxu4157zM_lYhbXtQdKU260r0hUZqRTapdp_i7TMT7pAwdE0fnia7JCK8cCkak3ZscV-IHpRwBU34O8Fv2kCAoVO6jTWZISEZvH-qFqKWorHygvS3UzWWmJLO1nJ_5P0JL7v7VcykYhOGmPDmfwweljLdfPsBs03ToCIc0ZXFKkrIRAGGCjWtAjvYQlGTWsN_5qKeA1CGfIVKujpLGKWYqLe0XzjhBYTlS_tfoqMCDMOwagDrpiQ-yKjf2qypLUqdtwyeWk_JXBOHO9pF-WPPJv3sU1KnoP5lAc90ImLqE3m4218KGjKotf2xWOEffXeoHtFol4oEU9q8kx0-UdWspsSMCGfJOghP-G1_PHwD5XSrmZvWHmpPDpVXO-esgmrQggzlUzoqzMY-8eCq_yM5MLElxeNwFB6zVnm9BIHIXZQDS-qH87gh2ZCT-FhZ6iY29iDaPLU6DvtSOSVTyLMNNNDKTLI6owdj6TTiSKtDJl6JYC6DK-XFOoJPYuMp9B0IZ_qqBY6znd7QmOW3PSIMlHsuH4X8YZCxsRUEqmAvVeAo7iQdQCEWSObXHuhGh1a_0BSXdVGVXFoZgur5x8RCUQTorbxXvdFDDJtVBh_L1n2yPT4kiF5D6kIU5jswHfgh9elNVH0ss1YIzDLTnGbT-Soe26k__VBmW3dA_o8MFGLVhTcTEilL5vpK5ddmLCMcMp8Sr0xnvtkH0yo8sCsXYw_hmDqBTwWkruKFp4_1zUNy2oj3rgHg_bqXaBhPaQEKxzczB7843ohIovRGkomq4uxBUZwmu_pwA9IXG_1s6nMDQVCA4lsiitdbADOqfbBzK6xSoRHfTehQ.jDEcI87XcSweYvmXYPL-HA.b4b8381d58566ec77b5e8ad272d643161ef8f2e7df9dcf2f92f4d0bd3e09b447"/>
            </div>
           </div>
          </div>
         </div>
        </div>
        <div class="form-actions">
-        <input class="btn btn-success btn-large" data-disable-with="Anmelden" disabled="disabled" id="devise-session-submit" name="commit" type="submit" value="Anmelden"/>
+        <input class="btn btn-success btn-large" data-disable-with="Anmelden" id="devise-session-submit" name="commit" type="submit" value="Anmelden"/>
        </div>
       </form>
       <ul class="shared-links">
@@ -195,9 +192,12 @@
     markiereSidebarAktiv();
   });
   </script>
+  <script>
+   (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d19abf6dea00d25',t:'MTc3MTcxMjg1Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+  </script>
+  <iframe height="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" width="1">
+  </iframe>
   <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"0bb2758316c041879c8c058dc21b089c","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015">
   </script>
-  <protonpass-root-76cc data-protonpass-role="root" data-protonpass-theme="os" popover="manual">
-  </protonpass-root-76cc>
  </body>
 </html>

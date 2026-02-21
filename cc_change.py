@@ -14,6 +14,7 @@ import os
 import sys
 import time
 import re
+import undetected_chromedriver as undetected
 from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.service import Service
@@ -31,7 +32,7 @@ def main():
     driver_setup(url)
     # scroll_down_press_forward()
     soup = get_page_source_and_create_soup()
-    print(soup) 
+    # print(soup) 
     write_in_txt_file(soup, "soup.txt")
     # write_in_csv_file(soup)
     # all_urls = get_all_href_from_urls(soup)
@@ -77,15 +78,21 @@ def driver_setup(url: str):
     global driver
     # service = Service('/path/to/firefoxdriver')
     # driver = webdriver.Firefox(service=service)
-    options = Options()
-    profile_path = "/home/daniel/.mozilla/firefox/40668zc4.default-esr"
-    options.add_argument("-profile")
-    options.add_argument(profile_path)
-
-    options.set_preference("dom.webdriver.enabled", False)
-    options.set_preference("useAutomationExtension", False)
-    driver = webdriver.Firefox(options=options)
+    # options = Options()
+    # profile_path = "/home/daniel/.mozilla/firefox/40668zc4.default-esr"
+    # options.add_argument("-profile")
+    # options.add_argument(profile_path)
+    #
+    # options.set_preference("dom.webdriver.enabled", False)
+    # options.set_preference("useAutomationExtension", False)
+    # driver = webdriver.Firefox(options=options)
     # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+
+    options = undetected.ChromeOptions()
+    # options.add_argument('--headless')
+
+    driver = undetected.Chrome(options=options)
+
     driver.maximize_window()
     driver.implicitly_wait(2)
     _ = driver.get(url)
