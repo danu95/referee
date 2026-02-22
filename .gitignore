@@ -1,11 +1,33 @@
-# Python virtual environment
+# --- Security & Secrets ---
+pw.txt
+.env
+*.log
+
+# --- Python & Environment ---
 .venv/
+env/
+venv/
 __pycache__/
 *.py[cod]
+*$py.class
 
-# Selenium / Logs
+# --- Neovim & Editor Backup files ---
+# (Common when using Nvim on Debian)
+*.swp
+*.swo
+.netrwhist
+undo/
+
+# --- OS Generated ---
+.DS_Store
+Thumbs.db
+
+# --- Selenium / Drivers ---
 geckodriver.log
 ghostdriver.log
 
-# Data files (Optional: keep them if they are part of the repo)
+# --- Data ---
 *.csv
+*.json
+!manifest.json  # Example: Ignore all JSON except a specific config
+

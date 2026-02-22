@@ -15,15 +15,18 @@ import sys
 import time
 import re
 import undetected_chromedriver as undetected
-from selenium import webdriver
-from webdriver_manager.firefox import GeckoDriverManager
-from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
+# from selenium import webdriver
+# from webdriver_manager.firefox import GeckoDriverManager
+# from selenium.webdriver.firefox.service import Service
+# from selenium.webdriver.firefox.options import Options
+from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
-from selenium.webdriver import ActionChains
+from selenium.webdriver.common.actions.action_builder import ActionBuilder
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ECondition
 
-
+# === Main ===
 def main():
     url: str = "https://www.clubcorner.ch/users/sign_in"
     # csvFile: str = "changes.csv"
@@ -32,8 +35,8 @@ def main():
     driver_setup(url)
     # scroll_down_press_forward()
     soup = get_page_source_and_create_soup()
-    # print(soup) 
     write_in_txt_file(soup, "soup.txt")
+    find_insert_mail()
     # write_in_csv_file(soup)
     # all_urls = get_all_href_from_urls(soup)
     # relevant_urls = filter_relevant_href(all_urls)
@@ -52,53 +55,21 @@ def main():
     # for i in range (3): 
     #     write_in_csv_file(visible_break)
     #
-    # url = "https://www.sfl.ch/resultate/"
-    # driver_setup(url)
-    # scroll_down_press_forward()
-    # soup = get_page_source_and_create_soup()
-    # all_urls = get_all_href_from_urls(soup)
-    # relevant_urls = filter_relevant_href(all_urls)
-    # for i in range(len(relevant_urls)):
-    #     driver.get(relevant_urls[i])
-    #     soup = get_page_source_and_create_soup()
-    #     infos = find_all_infos(soup)
-    #     try:
-    #         write_in_csv_file(infos)
-    #     except:
-    #         pass
-
     # close_csv_file()
     driver_quit()
 
-
-
-
-
+# === Driver setup & start ===
 def driver_setup(url: str):
     global driver
-    # service = Service('/path/to/firefoxdriver')
-    # driver = webdriver.Firefox(service=service)
-    # options = Options()
-    # profile_path = "/home/daniel/.mozilla/firefox/40668zc4.default-esr"
-    # options.add_argument("-profile")
-    # options.add_argument(profile_path)
-    #
-    # options.set_preference("dom.webdriver.enabled", False)
-    # options.set_preference("useAutomationExtension", False)
-    # driver = webdriver.Firefox(options=options)
-    # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-
     options = undetected.ChromeOptions()
-    # options.add_argument('--headless')
-
     driver = undetected.Chrome(options=options)
-
-    driver.maximize_window()
-    driver.implicitly_wait(2)
+    _ = driver.maximize_window()
+    _ = driver.implicitly_wait(2)
     _ = driver.get(url)
-    driver.implicitly_wait(3)
-    time.sleep(5)
+    _ = driver.implicitly_wait(3)
+    _ = time.sleep(5)
 
+# === Driver Quit ===
 def driver_quit():
     driver.quit()
 
@@ -147,6 +118,37 @@ def get_page_source_and_create_soup():
     page_source = driver.page_source
     soup = BeautifulSoup(page_source, 'html.parser')
     return soup
+
+
+def find_insert_mail():
+    # Find the element first
+    email_field = driver.find_element(By.ID, "user_email")
+    # Type directly into the element
+    _ = email_field.send_keys("test_mail")
+    # Now check the value
+    values_are: str | None = email_field.get_attribute('value')
+    print(f"Internal Value: {values_are}")
+    print(f"The type is: {type(values_are)}")
+    assert values_are == "test_mail"
+
+    time.sleep(2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def get_all_href_from_urls(soup):
     all_urls = [a['href'] for a in soup('a') if a.has_attr('href')]

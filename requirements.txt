@@ -20,6 +20,7 @@ selenium          # For browser automation
 webdriver-manager # To automatically download/manage GeckoDriverManager
 undetected_chromedriver # Um die Clouflare checks zu umgehen
 setuptools # für undetected_chromedriver
+vale # für linter usw. 
 
 
 
