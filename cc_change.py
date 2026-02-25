@@ -30,13 +30,16 @@ from selenium.webdriver.support import expected_conditions as ECondition
 def main():
     url: str = "https://www.clubcorner.ch/users/sign_in"
     # csvFile: str = "changes.csv"
-    
+
     # open_or_create_csv_file(csvFile)
     driver_setup(url)
     # scroll_down_press_forward()
     soup = get_page_source_and_create_soup()
     write_in_txt_file(soup, "soup.txt")
-    find_insert_mail()
+    find_insert_login()
+    time.sleep(2)
+    press_anmelden()
+    time.sleep(2)
     # write_in_csv_file(soup)
     # all_urls = get_all_href_from_urls(soup)
     # relevant_urls = filter_relevant_href(all_urls)
@@ -62,7 +65,7 @@ def main():
 def driver_setup(url: str):
     global driver
     options = undetected.ChromeOptions()
-    driver = undetected.Chrome(options=options)
+    driver = undetected.Chrome(version_main=145, options=options)
     _ = driver.maximize_window()
     _ = driver.implicitly_wait(2)
     _ = driver.get(url)
@@ -120,25 +123,44 @@ def get_page_source_and_create_soup():
     return soup
 
 
-def find_insert_mail():
-    # Find the element first
+def find_insert_login():
+    # first we need to get some credentials
+    mail_from_txt: str
+    pw_from_txt: str
+    mail_from_txt, pw_from_txt = get_credentials()
+
+
+    # now we search the mail element 
     email_field = driver.find_element(By.ID, "user_email")
     # Type directly into the element
-    _ = email_field.send_keys("test_mail")
+    _ = email_field.send_keys(mail_from_txt)
     # Now check the value
     values_are: str | None = email_field.get_attribute('value')
-    print(f"Internal Value: {values_are}")
-    print(f"The type is: {type(values_are)}")
-    assert values_are == "test_mail"
+    assert values_are == mail_from_txt
 
     time.sleep(2)
 
+    # now we search the mail element 
+    pw_field = driver.find_element(By.ID, "user_password")
+    # Type directly into the element
+    _ = pw_field.send_keys(pw_from_txt)
+    # Now check the value
+    values_are: str | None = pw_field.get_attribute('value')
+    assert values_are == pw_from_txt
+
+    time.sleep(2)
+
+def get_credentials():
+    with open("pw.txt") as f:
+        mail_from_txt: str = f.readline().strip()
+        pw_from_txt: str = f.readline().strip()
+    return mail_from_txt, pw_from_txt
 
 
-
-
-
-
+def press_anmelden():
+    mouse = ActionChains(driver)
+    anmelden_button = driver.find_element(By.ID, "devise-session-submit")
+    mouse.move_to_element(anmelden_button).click().perform()
 
 
 

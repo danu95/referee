@@ -7,7 +7,7 @@
   <link href="/sfv-logo.png" rel="icon"/>
   <script src="/assets/application_bootstrap_2-e7a4e2bd3ca1be1cfc6c0cc89651e4cb43600f64436f72fd51ae1d108bd3496d.js">
   </script>
-  <script crossorigin="anonymous" src="/vite/assets/application_bootstrap_2-B133amCS.js" type="module">
+  <script crossorigin="anonymous" src="/vite/assets/application_bootstrap_2-DA-nSkaP.js" type="module">
   </script>
   <link href="/vite/assets/application_bootstrap_2-DvWgSWBF.css" media="screen" rel="stylesheet"/>
   <script src="/assets/locales/de-450d300b00e68bdbc7f1e32d147897ef055a1bc147366458efa9db3890a5bceb.js">
@@ -31,9 +31,9 @@
    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2WZS73BP50');
   </script>
   <meta content="authenticity_token" name="csrf-param"/>
-  <meta content="5pbEQBleGrC7eyVwU2BtA9zxObYef46HdqQoDxiJfnqtUp0zQEejOZSNFk1oom3GNF_3B8VDfkk_64animm1kg" name="csrf-token"/>
+  <meta content="IQmdvXWJAiMe9m3HOrbYIKvdMITFSfIRjbMPmpwchkmVvSfMaznWJ5DdSoBNabMizng3rcLR4BwJTmhL3X6njA" name="csrf-token"/>
   <meta content="de" name="locale"/>
-  <!-- 3327d7d72491
+  <!-- a9bc7b061401
  -->
  </head>
  <body class="bootstrap-2 devise_overrides-sessions new" style="">
@@ -111,7 +111,7 @@
        </h1>
       </div>
       <form accept-charset="UTF-8" action="/users/sign_in" class="simple_form form-horizontal" id="new_user" method="post" novalidate="novalidate">
-       <input autocomplete="off" name="authenticity_token" type="hidden" value="5pbEQBleGrC7eyVwU2BtA9zxObYef46HdqQoDxiJfnqtUp0zQEejOZSNFk1oom3GNF_3B8VDfkk_64animm1kg"/>
+       <input autocomplete="off" name="authenticity_token" type="hidden" value="IQmdvXWJAiMe9m3HOrbYIKvdMITFSfIRjbMPmpwchkmVvSfMaznWJ5DdSoBNabMizng3rcLR4BwJTmhL3X6njA"/>
        <div class="control-group email optional user_email">
         <label class="control-label email optional control-label" for="user_email">
          E-Mail
@@ -142,7 +142,7 @@
          <div class="cloudflare-turnstile">
           <div class="cf-turnstile" data-action="other" data-callback="enableDeviseSessionSubmit" data-sitekey="0x4AAAAAAB0yEiwfUIAcU3oA" data-size="normal" data-theme="auto">
            <div>
-            <input id="cf-chl-widget-co1u1_response" name="cf-turnstile-response" type="hidden" value="0.WzQ59ReW0FqQxEOy6mA1pR_ss6-nks9AZOj9iHYpi8nsu1n6f1E2OJt5Jm6D1uFMBjhXCmAMDsQ25J-lIlemCntRXSFkRZQnbt7tz0abyWQHlXxOPmtV_WwHbYY4-BRSDexyZKQLqelJtOr4-WSTS_q-Dua9DSbqEOj27D29M4sw6YX855aO_c_0ZYzJ42A4wHtI4KC5OORVF9CPgIPm6JRTPh4yMY2xEoqNrnN_B-HjsGyRJoT9c0ssJepOOf91raPayuB4PVMhL-fN8jjPL-EmvVP3LhRiwvmiO2ls0ddmcdQmEOuRgutQskgCUj0mC1K0iaEYtqOFcyelCaI72ioJjRXUb4JfKRjCXNa-_ub6U55TtR_SvGc1yjuQdaGj6mGV_romrC1d0U67BiDjc7xKYf1RyjcS4cAfxOWFVvs5hNf1avIuRWuxjVGr-9w6T-FadwHKXAVOMla_N5zybBmmDh0ktj1ja72sJnL_ixIM_0nLLlw38n3FZwCHwsNV2po483m9GswltQOq0CgGRT8syZFYdjATkTibbHv-KJlgApubLoEaP5CElmr9wuvAbAQy_MBCQi8hi-as7fIAr4hkfv6mrP9HPLk-mRu6cwWvwKEPbZOheM8wsiCqETV2iSl4dkcHZSVxbwef4VPM6s1ODPB-HydmP0hu_E2U0pBSAJR7vfXPhDMdspOCaLaNPVQndBp3HtEWPdYwBKK-bn5RsQQ6yhiUfc6WMfg2ATcRXqCHwo-jSF7L0FnaRd4UpBL4ILIHwSSQOq9ersXgTxkx-3yYHTzMAqxZY4MPaR7FJRdCPSxZxBpGFgHAXn89fxgSf43PLfa1A7DWmIPcIR3ZRCijQWYwhB7LAcI5PI8RooAnNYBSMj37MWvmAZh1mLtPWqLpldt9zNJ_fiqCfJuIgdDQIGIAOVfWn8cbHjs.RQNB9x-kZEDRclhUi4qXKg.2c957d25afd21532836750882ef4d8229b1faa4a3dcc2c64715b4144573c8fd4"/>
+            <input id="cf-chl-widget-9c83j_response" name="cf-turnstile-response" type="hidden" value="0.RBKd8LSOoh5vqA2t8VDfR3WxZA6qdwPrv5V-CvlGo0_QAp4OuYU-VZcitqcHe6fO1-jNDHlQglzsB7s2Mi6NLZJHBPAZSW6FJOpV9eJahNCX2ymO60gwY49V5TxxjY53bbpV6e2X_W3RTI0VlF1rZI-QaJKN2dluf2WKtx2KaTnMUpvJwus8tdQScvecdh2L7m63JV_nMfBY8q8XQ_uE1F-iPMDvcjOgFdscPAj697l_FZFBilmq1BAYNrBA2x-K9ZA996VfdfHo2sWWQzyJ9zImcGjNu9-dbtreUDSLlgMQX3smpEZ3_HC2DFwBCq8VuOWBfdoiyen302qcwN-Ekz9x-c7Xvsv4XyyMgZqZFoDFGiW7q2eJhEFtGG-ow3PEsXkF75vuJTxwffd0jHKVkzgVmJA2ywh7sC4DgxUwkqBi_C_ZyAuPgWmP8K7U7HzcE2twPnUXsButY3esZ8OHd65xwAH0D3oBWo56eU7FEDwsQhIC5nVOb2_bvC8aK6XPLYRFFTGtM6mrBUXo7H76vFbg3GtEwGDcJch986kKRhxC2LoQUZrPm35jjow6es41OAyyVEg9-yDyk2UfwHDD-Lm5JU3sMxIcok2k_SRAjUMWtqCeK786vOqRTnfx8gYCdpgUkJSZWsZgWGJ6BegoLN9K2JI4d_vqI3KrIvKX80cCLXKeDTpd_Dbh_6KSUUPxq5aS3BdM1-2j_BfW4wsJOFbdoeAOLzClBCxqKk0T6TMmVMUnm2MroeUNwsckNHCFlWYTj227jVBlTNA32BWYbUSjBZfk84IYUThYjK8oeHhRfYFe90NsAqIw2i7_jB1NON7_FesIfqZSO0U7or2QL6tMosj_dM3sVMUO41sWPcbyMxhwi3gkUE4DftflTOTDDJP05af9PNghusYoo23l5sKMN47f6SmiSh07jwbf_t_Ol9JfVTF2bPKfJMrmP1Ke37hSgO8qFvf6C9o7F_v4Ow.c71Ym0uZKgczaN3qNxANyw.fb10b892767711e3ef460a5cd458c90933873865e62eb714b83777a8ff4ddb22"/>
            </div>
           </div>
          </div>
@@ -192,12 +192,12 @@
     markiereSidebarAktiv();
   });
   </script>
+  <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"0bb2758316c041879c8c058dc21b089c","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-rdcWY47ByXd76cbCFzznIcEaCN71jqkWBBqlwhF1SY7KubdLKZiEGeP7AyieKZlGP9hbY/MhGrwXzJC/HulNyg==" src="https://static.cloudflareinsights.com/beacon.min.js/v67327c56f0bb4ef8b305cae61679db8f1769101564043">
+  </script>
   <script>
-   (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d215f580f2a24c0',t:'MTc3MTc5MzYwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+   (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d3a8fb86971bc50',t:'MTc3MjA1NzcyNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
   </script>
   <iframe height="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" width="1">
   </iframe>
-  <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"0bb2758316c041879c8c058dc21b089c","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015">
-  </script>
  </body>
 </html>
