@@ -14,6 +14,7 @@ import os
 import sys
 import time
 import re
+import difflib
 import undetected_chromedriver as undetected
 # from selenium import webdriver
 # from webdriver_manager.firefox import GeckoDriverManager
@@ -30,15 +31,33 @@ from selenium.webdriver.support import expected_conditions as ECondition
 def main():
     url: str = "https://www.clubcorner.ch/users/sign_in"
     # csvFile: str = "changes.csv"
+    old_file: str= 'old_soup.txt'
+    new_file: str = 'new_soup.txt'
+    start_w: str = 'Zukünftige Einsätze'
+    end_w: str = 'Zukünftige Ausbildungen'
 
     # open_or_create_csv_file(csvFile)
     driver_setup(url)
     # scroll_down_press_forward()
-    soup = get_page_source_and_create_soup()
-    write_in_txt_file(soup, "soup.txt")
     find_insert_login()
     time.sleep(2)
     press_anmelden()
+    time.sleep(2)
+    soup = get_page_source_and_create_soup()
+    write_in_txt_file(soup, "new_soup.txt")
+    time.sleep(2)
+
+
+# 1. Get the cleaned data
+    inhalt_old = extract_and_clean(old_file, start_w, end_w)
+    inhalt_new = extract_and_clean(new_file, start_w, end_w)
+
+# 2. Run the comparison
+    unterschied: str | None = compare_sections(inhalt_old, inhalt_new, old_file, new_file)
+
+    print(unterschied)
+
+    write_in_txt_file(soup, "old_soup.txt")
     time.sleep(2)
     # write_in_csv_file(soup)
     # all_urls = get_all_href_from_urls(soup)
@@ -161,6 +180,55 @@ def press_anmelden():
     mouse = ActionChains(driver)
     anmelden_button = driver.find_element(By.ID, "devise-session-submit")
     mouse.move_to_element(anmelden_button).click().perform()
+
+
+def extract_and_clean(filename: str, start_word: str, end_word: str):
+    with open(filename, 'r', encoding='utf-8') as f:
+        content = f.read()
+        
+    start_idx = content.find(start_word)
+    end_idx = content.find(end_word)
+
+    if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
+        # Extract the section
+        section = content[start_idx : end_idx + len(end_word)]
+        
+        # Cleaning: Split into lines, strip whitespace, and remove empty lines
+        lines = [line.strip() for line in section.splitlines() if line.strip()]
+        return lines
+    
+    return None
+
+
+
+
+def compare_sections(old_inhalt: list[str] | None, new_inhalt: list[str] | None, file_old: str, file_new: str):
+    # The truthiness check ensures both extractions were successful
+    if old_inhalt is not None and new_inhalt is not None:
+        if file_old == file_new:
+            print(f"The sections in '{file_old}' and '{file_new}' are identical.")
+        else:
+            print(f"Changes found between markers in '{file_old}' vs '{file_new}':\n")
+            
+            # Generating the diff output
+            diff = difflib.unified_diff(
+                old_inhalt, 
+                new_inhalt, 
+                fromfile=file_old, 
+                tofile=file_new,
+                lineterm=''
+            )
+            for line in diff:
+                print(line)
+            # This 'attribute' joins all diff lines into one big string
+            diff_output = '\n'.join(list(diff))
+            return diff_output
+    else:
+        print("Error: Markers ('Zukünftige...') not found or in wrong order in one or both files.")
+
+
+
+
 
 
 
