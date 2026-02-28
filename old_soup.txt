@@ -22,9 +22,9 @@
    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2WZS73BP50');
   </script>
   <meta content="authenticity_token" name="csrf-param"/>
-  <meta content="W1-lscFzv0CsNXozl1508YgVgOcwsHq5BJHcjFALxIwtpF3MtG06U5CrSXaE318xb4xYbxnmpaFs3ZXFYiGeOA" name="csrf-token"/>
+  <meta content="0UPf705TvSIFrXykvC5YXHY-Q4tS_IBPqpaP3rg8qfl7U02LSVgaCB_ggrC8uTTWRtYvH2LBUdZXDqbt0j3OZA" name="csrf-token"/>
   <meta content="de" name="locale"/>
-  <!-- 70050e43c165
+  <!-- e7194cf17915
  -->
  </head>
  <body class="bootstrap-2 home index" style="">
@@ -388,7 +388,7 @@
              <span class="label">
               FC Reichenbach (10517)
              </span>
-             <a href="/vereine/1454/mitgliederverzeichnis?mitgliederverzeichnis_search%5Bgeburtstagsdatum_bis%5D=2026-03-08&amp;mitgliederverzeichnis_search%5Bgeburtstagsdatum_von%5D=2026-02-26&amp;sort=geburtstag">
+             <a href="/vereine/1454/mitgliederverzeichnis?mitgliederverzeichnis_search%5Bgeburtstagsdatum_bis%5D=2026-03-10&amp;mitgliederverzeichnis_search%5Bgeburtstagsdatum_von%5D=2026-02-28&amp;sort=geburtstag">
               3 Vereinsmitglieder haben in den nächsten 10 Tagen Geburtstag
              </a>
             </h4>
@@ -410,7 +410,7 @@
               FC Reichenbach (10517)
              </span>
              <a href="/vereine/1454/spiele">
-              Aktuelle Spiele: 4
+              Aktuelle Spiele: 5
              </a>
             </h4>
            </div>
@@ -3585,7 +3585,7 @@ Phase 2
                 Anzahl Teilnehmer
                </th>
                <td>
-                69
+                70
                </td>
               </tr>
               <tr>
@@ -5307,7 +5307,7 @@ Phase 2
                  Anzahl Teilnehmer
                 </th>
                 <td>
-                 69
+                 70
                 </td>
                </tr>
                <tr>
@@ -5457,282 +5457,6 @@ Phase 2
          <h5>
           Faga Marco
          </h5>
-         <div class="accordion-group" id="einsaetze_der_naechsten_zeit">
-          <div class="accordion-heading">
-           <div class="right">
-            <i class="icon-calendar">
-            </i>
-            Sa 28.02.2026
-            <i class="icon-time">
-            </i>
-            14:30
-           </div>
-           <div class="accordion-toggle" data-toggle="collapse" href="#einsatz-4419210">
-            <h4>
-             <div class="label">
-              Schiedsrichter
-             </div>
-             <div class="label">
-              Trainingsspiele
-             </div>
-             <span class="label label-info">
-              714084
-             </span>
-             <a>
-              FC Spiez (4.) - FC Frutigen (4.)
-             </a>
-            </h4>
-           </div>
-          </div>
-          <div class="accordion-body collapse" id="einsatz-4419210">
-           <div class="accordion-inner">
-            <h6>
-             Teams
-            </h6>
-            <table class="table">
-             <tbody>
-              <tr>
-               <th width="20%">
-               </th>
-               <td width="40%">
-                <div class="emblem team">
-                 <div class="avatar">
-                  <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/10505.gif"/>
-                 </div>
-                 <div class="text" rel="tooltip" title="4. Liga / -">
-                  <div class="title">
-                   <div class="abschneiden">
-                    FC Spiez
-                   </div>
-                  </div>
-                  <div class="subtitle">
-                   <div class="abschneiden">
-                    4. / -
-                   </div>
-                  </div>
-                 </div>
-                </div>
-               </td>
-               <td width="40%">
-                <div class="emblem team">
-                 <div class="avatar">
-                  <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/10504.gif"/>
-                 </div>
-                 <div class="text" rel="tooltip" title="4. Liga / -">
-                  <div class="title">
-                   <div class="abschneiden">
-                    FC Frutigen
-                   </div>
-                  </div>
-                  <div class="subtitle">
-                   <div class="abschneiden">
-                    4. / -
-                   </div>
-                  </div>
-                 </div>
-                </div>
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Vereinsnummer
-               </th>
-               <td>
-                10505
-               </td>
-               <td>
-                10504
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Tenuefarben
-               </th>
-               <td>
-                blau / blau / blau
-               </td>
-               <td>
-                weiss/blau / blau / blau
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Tenuesponsor
-               </th>
-               <td>
-                Piccolo Seniorenwohngemeinschaft Spiez
-               </td>
-               <td>
-                Widi Garage
-               </td>
-              </tr>
-             </tbody>
-            </table>
-            <h6>
-             Spiel
-            </h6>
-            <table class="table condensed">
-             <tbody>
-              <tr>
-               <th width="20%">
-                Liga / Spielklasse
-               </th>
-               <td>
-                4. Liga
- / 
--
-               </td>
-              </tr>
-              <tr>
-               <th width="20%">
-                Spieltyp
-               </th>
-               <td>
-                Trainingsspiele
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Spielfeld
-               </th>
-               <td>
-                ABC-Zentrum, Spiez Hauptplatz
-                <div class="pull-right">
-                 <i class="icon-map-marker">
-                 </i>
-                 <a href="https://maps.google.com/maps?&amp;z=15&amp;t=k&amp;q=46.69154+7.64729" rel="noreferrer" target="_blank">
-                  Google Maps
-                 </a>
-                </div>
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Umkleideort
-               </th>
-               <td>
-                ABC-Zentrum, Spiez
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Bemerkungen
-               </th>
-               <td>
-                <p>
-                 Wettspielfeld: Achtung: Das Spiel kann auf dem Natur- oder Kunststoffrasenplatz ausgetragen werden. Entsprechendes Schuhwerk ist mitzunehmen. Keine Getränke auf dem Rasen sowie Kaugummi, Snus- und Rauchverbot (auch am Spielfeldrand)!
-                </p>
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Tel. Restaurant
-               </th>
-               <td>
-                +41 (33) 2281896
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Vereinsaufgebot
-               </th>
-               <td>
-                Theilkäs Bernhard 033/6545248 oder 079/3557322
-               </td>
-              </tr>
-              <tr>
-               <th>
-                Pikettstelle
-               </th>
-               <td>
-                <a class="btn" href="https://www.fvbj-afbj.ch/fussballverband-bern-jura/verband-fvbj/pikettstellen-fvbj.aspx" target="_blank">
-                 <i class="icon-fire">
-                 </i>
-                 Fussballverband Bern/Jura
-                </a>
-               </td>
-              </tr>
-             </tbody>
-            </table>
-            <h6>
-             Schiedsrichter
-            </h6>
-            <table class="table">
-             <tbody>
-              <tr class="">
-               <th>
-                Schiedsrichter
-               </th>
-               <td>
-                <div class="emblem person" data-placement-hint="left" rel="tooltip" title='&lt;img src="/azure_blob_private?cn=fotos&amp;amp;fp=F%2FFagaMarco_256574.jpg&amp;amp;v=1559554260" /&gt;'>
-                 <div class="avatar">
-                  <img src="/azure_blob_private?cn=fotos&amp;fp=F%2FFagaMarco_256574.jpg&amp;v=1559554260"/>
-                 </div>
-                 <div class="text">
-                  <div class="title">
-                   <a href="/personen/256574.vcf" rel="tooltip" title="Kontakt speichern">
-                    <i class="icon-download">
-                    </i>
-                   </a>
-                   <a class="abschneiden" href="/personen/256574">
-                    Faga Marco
-                   </a>
-                  </div>
-                  <div class="subtitle">
-                   <i class="icon-calendar">
-                   </i>
-                   16.03.1976
-                  </div>
-                 </div>
-                </div>
-                <div class="qualifizierung">
-                 <strong>
-                  Aktuelle Qualifizierungen
-                 </strong>
-                 <ul class="unstyled">
-                  <li>
-                   <small>
-                    <span style="display: inline-block; min-width: 95px">
-                     <i class="icon-calendar">
-                     </i>
-                     12.08.2023
-                    </span>
-                    <span>
-                     SR - 4. Liga
-                    </span>
-                   </small>
-                  </li>
-                 </ul>
-                </div>
-               </td>
-               <td>
-                <strong>
-                 Tel. Privat:
-                </strong>
-                +41 (33) 6710789
-                <br/>
-                <strong>
-                 Tel. Mobil:
-                </strong>
-                +41 (79) 7700758
-                <br/>
-                <strong>
-                 Email 1:
-                </strong>
-                <a href="mailto:marco.franco@bluewin.ch">
-                 marco.franco@bluewin.ch
-                </a>
-                <br/>
-               </td>
-              </tr>
-             </tbody>
-            </table>
-            <style>
-             tr.ohne_kontaktdaten th { width: 140px }
-            </style>
-           </div>
-          </div>
-         </div>
          <div class="accordion">
           <div class="accordion-group">
            <div class="accordion-heading">
@@ -5841,7 +5565,7 @@ Phase 2
                  Anzahl Teilnehmer
                 </th>
                 <td>
-                 69
+                 70
                 </td>
                </tr>
                <tr>
@@ -8283,7 +8007,7 @@ Phase 2
                  Anzahl Teilnehmer
                 </th>
                 <td>
-                 69
+                 70
                 </td>
                </tr>
                <tr>

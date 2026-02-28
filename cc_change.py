@@ -9,13 +9,16 @@
 
 # === Import packages ===
 
+from email import charset
 from bs4 import BeautifulSoup
 import os
 import sys
 import time
 import re
 import difflib
+import smtplib
 import undetected_chromedriver as undetected
+from email.message import EmailMessage
 # from selenium import webdriver
 # from webdriver_manager.firefox import GeckoDriverManager
 # from selenium.webdriver.firefox.service import Service
@@ -47,15 +50,24 @@ def main():
     write_in_txt_file(soup, "new_soup.txt")
     time.sleep(2)
 
-
-# 1. Get the cleaned data
+    # 1. Get the cleaned data
     inhalt_old = extract_and_clean(old_file, start_w, end_w)
     inhalt_new = extract_and_clean(new_file, start_w, end_w)
 
-# 2. Run the comparison
+    # 2. Run the comparison
     unterschied: str | None = compare_sections(inhalt_old, inhalt_new, old_file, new_file)
 
-    print(unterschied)
+    if unterschied is not None:
+        print(unterschied)
+    else:
+        print("Keine Änderung") 
+
+    # Only send if unterschied is not None
+    if unterschied is not None:
+        send_mail("Clubcorner Aufgebot", unterschied)
+    else:
+        print("No changes found, skipping email.")
+
 
     write_in_txt_file(soup, "old_soup.txt")
     time.sleep(2)
@@ -95,46 +107,46 @@ def driver_setup(url: str):
 def driver_quit():
     driver.quit()
 
-def open_or_create_csv_file(csvFile):
-    global datei
-    dir_list = os.listdir()
-    if (csvFile in dir_list):
-        try:
-            datei = open(csvFile,"w")
-        except:
-            print("Dateizugriff nicht erfolgreich")
-            sys.exit(0)
-    else:
-        with open(csvFile, 'w') as datei:
-            pass
-    return datei
+# def open_or_create_csv_file(csvFile):
+#     global datei
+#     dir_list = os.listdir()
+#     if (csvFile in dir_list):
+#         try:
+#             datei = open(csvFile,"w")
+#         except:
+#             print("Dateizugriff nicht erfolgreich")
+#             sys.exit(0)
+#     else:
+#         with open(csvFile, 'w') as datei:
+#             pass
+#     return datei
 
 def write_in_txt_file(soup: BeautifulSoup, filename: str) -> None:
     for i in soup:
         with open(filename, "w") as file:
             _ = file.write(soup.prettify())
 
-def write_in_csv_file(infos):
-    for i in infos:
-        datei.write(i + ',')
-    datei.write('\n')
+# def write_in_csv_file(infos):
+#     for i in infos:
+#         datei.write(i + ',')
+#     datei.write('\n')
+#
+# def close_csv_file():
+#     datei.close
 
-def close_csv_file():
-    datei.close
-
-def scroll_down_press_forward():
-    mouse = ActionChains(driver)
-    start_point = ScrollOrigin.from_viewport(0,0)
-    for i in range(5):
-        for j in range(15):
-            ActionChains(driver).scroll_from_origin(start_point, 0, 500).perform()
-            time.sleep(1)
-        try:
-            show_more = driver.find_element(By.PARTIAL_LINK_TEXT, "Mehr anzeigen")
-            mouse.move_to_element(show_more).click().perform()
-            time.sleep(1)
-        except:
-            print('1')
+# def scroll_down_press_forward():
+#     mouse = ActionChains(driver)
+#     start_point = ScrollOrigin.from_viewport(0,0)
+#     for i in range(5):
+#         for j in range(15):
+#             ActionChains(driver).scroll_from_origin(start_point, 0, 500).perform()
+#             time.sleep(1)
+#         try:
+#             show_more = driver.find_element(By.PARTIAL_LINK_TEXT, "Mehr anzeigen")
+#             mouse.move_to_element(show_more).click().perform()
+#             time.sleep(1)
+#         except:
+#             print('1')
 
 def get_page_source_and_create_soup():
     page_source = driver.page_source
@@ -144,36 +156,39 @@ def get_page_source_and_create_soup():
 
 def find_insert_login():
     # first we need to get some credentials
-    mail_from_txt: str
-    pw_from_txt: str
-    mail_from_txt, pw_from_txt = get_credentials()
+    mail_cc_from_txt: str
+    pw_cc_from_txt: str
+    mail_cc_from_txt, pw_cc_from_txt, _, _, _, = get_credentials()
 
 
     # now we search the mail element 
     email_field = driver.find_element(By.ID, "user_email")
     # Type directly into the element
-    _ = email_field.send_keys(mail_from_txt)
+    _ = email_field.send_keys(mail_cc_from_txt)
     # Now check the value
     values_are: str | None = email_field.get_attribute('value')
-    assert values_are == mail_from_txt
+    assert values_are == mail_cc_from_txt
 
     time.sleep(2)
 
     # now we search the mail element 
     pw_field = driver.find_element(By.ID, "user_password")
     # Type directly into the element
-    _ = pw_field.send_keys(pw_from_txt)
+    _ = pw_field.send_keys(pw_cc_from_txt)
     # Now check the value
     values_are: str | None = pw_field.get_attribute('value')
-    assert values_are == pw_from_txt
+    assert values_are == pw_cc_from_txt
 
     time.sleep(2)
 
 def get_credentials():
     with open("pw.txt") as f:
-        mail_from_txt: str = f.readline().strip()
-        pw_from_txt: str = f.readline().strip()
-    return mail_from_txt, pw_from_txt
+        mail_cc_from_txt: str = f.readline().strip()
+        pw_cc_from_txt: str = f.readline().strip()
+        from_mail_txt: str = f.readline().strip()
+        to_mail_txt: str = f.readline().strip()
+        pw_from_mail_txt: str = f.readline().strip()
+    return mail_cc_from_txt, pw_cc_from_txt, from_mail_txt, to_mail_txt, pw_from_mail_txt
 
 
 def press_anmelden():
@@ -200,13 +215,12 @@ def extract_and_clean(filename: str, start_word: str, end_word: str):
     return None
 
 
-
-
 def compare_sections(old_inhalt: list[str] | None, new_inhalt: list[str] | None, file_old: str, file_new: str):
     # The truthiness check ensures both extractions were successful
     if old_inhalt is not None and new_inhalt is not None:
         if file_old == file_new:
             print(f"The sections in '{file_old}' and '{file_new}' are identical.")
+            return None
         else:
             print(f"Changes found between markers in '{file_old}' vs '{file_new}':\n")
             
@@ -218,15 +232,49 @@ def compare_sections(old_inhalt: list[str] | None, new_inhalt: list[str] | None,
                 tofile=file_new,
                 lineterm=''
             )
-            for line in diff:
-                print(line)
+
+            diff_list = list(diff)
+
             # This 'attribute' joins all diff lines into one big string
-            diff_output = '\n'.join(list(diff))
+            diff_output = '\n'.join(list(diff_list))
             return diff_output
     else:
         print("Error: Markers ('Zukünftige...') not found or in wrong order in one or both files.")
 
 
+def send_mail(subject_mail: str, message_mail: str):
+    _, _, from_mail_txt, to_mail_txt, pw_from_mail_txt = get_credentials()
+
+    msg = EmailMessage()
+    msg['Subject'] = subject_mail
+    msg['From'] = from_mail_txt
+    msg['To'] = to_mail_txt
+    
+    msg.set_content(message_mail)
+
+    # Add the html version.  This converts the message into a multipart/alternative
+    # container, with the original text message as the first part and the new html
+    # message as the second part.
+
+    msg.add_alternative(f"""\
+    <html>
+      <head></head>
+      <body>
+            <h3>Neue Änderungen gefunden:</h3>
+            <pre style="font-family: monospace; background-color: #f4f4f4; padding: 10px;">
+            {message_mail}
+            </pre>
+      </body>
+    </html>
+    """, subtype='html')
+    # note that we needed to peel the <> off the msgid for use in the html.
+
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        _ = server.starttls()
+        _ = server.login(from_mail_txt, pw_from_mail_txt)
+
+        _ = server.send_message(msg)
+        print("email gesendet")
 
 
 
@@ -239,34 +287,33 @@ def compare_sections(old_inhalt: list[str] | None, new_inhalt: list[str] | None,
 
 
 
+# def get_all_href_from_urls(soup):
+#     all_urls = [a['href'] for a in soup('a') if a.has_attr('href')]
+#     return all_urls
 
-def get_all_href_from_urls(soup):
-    all_urls = [a['href'] for a in soup('a') if a.has_attr('href')]
-    return all_urls
-
-def filter_relevant_href(all_urls):
-    myFilter = r"^https://www.sfl.ch/spieldetail/detail/"
-    relevant_urls = [url for url in all_urls if re.match(myFilter, url)]
-    relevant_urls = list(set(relevant_urls))
-    return relevant_urls
+# def filter_relevant_href(all_urls):
+#     myFilter = r"^https://www.sfl.ch/spieldetail/detail/"
+#     relevant_urls = [url for url in all_urls if re.match(myFilter, url)]
+#     relevant_urls = list(set(relevant_urls))
+#     return relevant_urls
 
 # get the actual referees from the page
-def find_all_infos(soup):
-    try:
-        ref_tag = soup.find('strong', string="SCHIEDSRICHTER")
-        ref1 = ref_tag.next_sibling.next_sibling
-        ref2 = ref1.next_sibling.next_sibling
-        ref3 = ref2.next_sibling.next_sibling
-        ref4 = ref3.next_sibling.next_sibling
-        datum = soup.find('div', class_="c-matchdetail-hero__date u-text-semibold u-text-center").next.next.next
-        datum = (''.join(datum.splitlines())).lstrip()
-        runde = soup.find('div', class_="c-matchdetail-hero__round u-text-center u-text-semibold").next
-        home = soup.find('p', class_="u-visible-md-up").next
-        away = home.find_next('p', class_="u-visible-md-up").next
-        spielinfos = [runde, datum, home, away, ref1, ref2, ref3, ref4]
-        return spielinfos
-    except:
-        pass
+# def find_all_infos(soup):
+#     try:
+#         ref_tag = soup.find('strong', string="SCHIEDSRICHTER")
+#         ref1 = ref_tag.next_sibling.next_sibling
+#         ref2 = ref1.next_sibling.next_sibling
+#         ref3 = ref2.next_sibling.next_sibling
+#         ref4 = ref3.next_sibling.next_sibling
+#         datum = soup.find('div', class_="c-matchdetail-hero__date u-text-semibold u-text-center").next.next.next
+#         datum = (''.join(datum.splitlines())).lstrip()
+#         runde = soup.find('div', class_="c-matchdetail-hero__round u-text-center u-text-semibold").next
+#         home = soup.find('p', class_="u-visible-md-up").next
+#         away = home.find_next('p', class_="u-visible-md-up").next
+#         spielinfos = [runde, datum, home, away, ref1, ref2, ref3, ref4]
+#         return spielinfos
+#     except:
+#         pass
     
 
 
