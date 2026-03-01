@@ -50,21 +50,18 @@ def main():
     write_in_txt_file(soup, "new_soup.txt")
     time.sleep(2)
 
-    # 1. Get the cleaned data
+    # Get the cleaned data
     inhalt_old = extract_and_clean(old_file, start_w, end_w)
     inhalt_new = extract_and_clean(new_file, start_w, end_w)
 
-    # 2. Run the comparison
+    # Run the comparison
     unterschied: str | None = compare_sections(inhalt_old, inhalt_new, old_file, new_file)
 
-    if unterschied is not None:
+    if inhalt_new != inhalt_old:
         print(unterschied)
-    else:
-        print("Keine Änderung") 
-
-    # Only send if unterschied is not None
-    if unterschied is not None:
-        send_mail("Clubcorner Aufgebot", unterschied)
+        # Only send if there is actual text to send
+        if unterschied:
+            send_mail("Clubcorner Aufgebot", unterschied)
     else:
         print("No changes found, skipping email.")
 

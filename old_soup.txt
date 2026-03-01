@@ -22,9 +22,9 @@
    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2WZS73BP50');
   </script>
   <meta content="authenticity_token" name="csrf-param"/>
-  <meta content="0UPf705TvSIFrXykvC5YXHY-Q4tS_IBPqpaP3rg8qfl7U02LSVgaCB_ggrC8uTTWRtYvH2LBUdZXDqbt0j3OZA" name="csrf-token"/>
+  <meta content="HlqRgeTkpfq9RTUbBJ3Sv1iTUq2a79n7UsRN53k3NAVmjFErepDbUUbTzkmqAmA1fIGXcnr_pXEL-DhPcIR8zA" name="csrf-token"/>
   <meta content="de" name="locale"/>
-  <!-- e7194cf17915
+  <!-- 5dfb9f6fa91c
  -->
  </head>
  <body class="bootstrap-2 home index" style="">
@@ -177,6 +177,9 @@
            <i class="icon-envelope icon-white">
            </i>
            FIS
+           <span class="badge badge-info">
+            1
+           </span>
           </a>
          </li>
          <li class="dropdown">
@@ -388,8 +391,8 @@
              <span class="label">
               FC Reichenbach (10517)
              </span>
-             <a href="/vereine/1454/mitgliederverzeichnis?mitgliederverzeichnis_search%5Bgeburtstagsdatum_bis%5D=2026-03-10&amp;mitgliederverzeichnis_search%5Bgeburtstagsdatum_von%5D=2026-02-28&amp;sort=geburtstag">
-              3 Vereinsmitglieder haben in den nächsten 10 Tagen Geburtstag
+             <a href="/vereine/1454/mitgliederverzeichnis?mitgliederverzeichnis_search%5Bgeburtstagsdatum_bis%5D=2026-03-11&amp;mitgliederverzeichnis_search%5Bgeburtstagsdatum_von%5D=2026-03-01&amp;sort=geburtstag">
+              2 Vereinsmitglieder haben in den nächsten 10 Tagen Geburtstag
              </a>
             </h4>
            </div>
@@ -10657,7 +10660,7 @@ Phase 2
            <div class="accordion-toggle">
             <h4>
              <a href="/schiedsrichter/spiele_ohne_coach">
-              Es gibt 1 Schiedsrichtereinsätze ohne Coach
+              Es gibt 30 Schiedsrichtereinsätze ohne Coach
              </a>
             </h4>
            </div>
