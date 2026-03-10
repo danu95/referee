@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
 
+neuer versuch!
+https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode
+from seleniumbase import SB
+
+with SB(uc=True, test=True, guest=True) as sb:
+    url = "www.planetminecraft.com/account/sign_in/"
+    sb.activate_cdp_mode(url)
+    sb.sleep(2)
+    sb.solve_captcha()
+    sb.wait_for_element_absent("input[disabled]")
+    sb.sleep(2)
+
+
+
+
 # === Must have ===
 # das ding muss wieder laufen
 
