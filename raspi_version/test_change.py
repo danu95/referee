@@ -373,7 +373,7 @@ def send_mail(subject_mail: str, message_mail: str):
 
 
     
-# main()
+main()
 
 
 
