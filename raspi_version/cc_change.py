@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-# === Must have ===
-# das ding muss wieder laufen
+# Das Script läuft als cronjob (zum sehen welche jobs laufen 'crontab -l') mit folgendem befehl:
+# 0 8,12,16,20 * * * /home/user1/git/referee/raspi_version/.venv/bin/python /home/user1/git/referee/raspi_version/cc_change.py >> /home/user1/cron_log.log 2>&1
 
-# === Nice to have ===
-# chronjob, damit es regelmässig läuft?
-# mail?
+# === Done ===
+# das ding muss wieder laufen
+# chronjob, damit es regelmässig läuft
+# mail
 
 # === Import packages ===
 
