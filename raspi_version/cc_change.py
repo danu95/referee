@@ -45,7 +45,7 @@ import smtplib
 from seleniumbase import SB
 
 with SB(uc=True, test=True, guest=True) as sb:
-    url = "www.planetminecraft.com/account/sign_in/"
+    url = "https://www.clubcorner.ch/users/sign_in"
     print("websetie geöffnet")
     sb.activate_cdp_mode(url)
     sb.sleep(2)
