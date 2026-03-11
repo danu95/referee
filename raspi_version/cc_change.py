@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Das Script läuft als cronjob (zum sehen welche jobs laufen 'crontab -l') mit folgendem befehl:
-# 0 8,12,16,20 * * * /home/user1/git/referee/raspi_version/.venv/bin/python /home/user1/git/referee/raspi_version/cc_change.py >> /home/user1/cron_log.log 2>&1
+# 0 8,12,16,20 * * * cd /home/user1/git/referee/raspi_version/ && /home/user1/git/referee/raspi_version/.venv/bin/python /home/user1/git/referee/raspi_version/cc_change.py >> /home/user1/cron_log.log 2>&1
 
 # === Done ===
 # das ding muss wieder laufen
