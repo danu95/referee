@@ -198,7 +198,8 @@ def find_insert_login():
     pw_cc_from_txt: str
     mail_cc_from_txt, pw_cc_from_txt, _, _, _, = get_credentials()
 
-
+    driver.wait_for_element("#user_email", timeout=10)
+    
     # 1. Type into the field (handles the 'find' and the 'wait' automatically)
     driver.type("#user_email", mail_cc_from_txt)
     # 2. Assert the value (built-in retry logic if the UI is slow)
