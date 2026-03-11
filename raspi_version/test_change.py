@@ -49,6 +49,7 @@ from seleniumbase import Driver
 
 # === Main ===
 def main():
+
     url: str = "https://www.clubcorner.ch/users/sign_in"
     # csvFile: str = "changes.csv"
     old_file: str= 'old_soup.txt'
@@ -56,35 +57,46 @@ def main():
     start_w: str = 'Zukünftige Einsätze'
     end_w: str = 'Zukünftige Ausbildungen'
 
-    # open_or_create_csv_file(csvFile)
-    driver_setup(url)
-    # scroll_down_press_forward()
-    find_insert_login()
-    time.sleep(2)
-    press_anmelden()
-    time.sleep(2)
-    soup = get_page_source_and_create_soup()
-    write_in_txt_file(soup, "new_soup.txt")
-    time.sleep(2)
+    global driver
+    with SB(uc=True, test=True, guest=True) as driver:
+        url = "https://www.clubcorner.ch/users/sign_in"
+        driver.activate_cdp_mode(url)
+        driver.sleep(2)
+        driver.solve_captcha()
+        driver.wait_for_element_absent("input[disabled]")
+        driver.sleep(2)
+        driver.save_screenshot("debug_page.png")
 
-    # Get the cleaned data
-    inhalt_old = extract_and_clean(old_file, start_w, end_w)
-    inhalt_new = extract_and_clean(new_file, start_w, end_w)
+        # open_or_create_csv_file(csvFile)
+        # driver_setup(url)
+        # scroll_down_press_forward()
+        find_insert_login()
+        time.sleep(2)
+        press_anmelden()
+        time.sleep(2)
+        soup = get_page_source_and_create_soup()
+        write_in_txt_file(soup, "new_soup.txt")
+        time.sleep(2)
 
-    # Run the comparison
-    unterschied: str | None = compare_sections(inhalt_old, inhalt_new, old_file, new_file)
+        # Get the cleaned data
+        inhalt_old = extract_and_clean(old_file, start_w, end_w)
+        inhalt_new = extract_and_clean(new_file, start_w, end_w)
 
-    if inhalt_new != inhalt_old:
-        print(unterschied)
-        # Only send if there is actual text to send
-        if unterschied:
-            send_mail("Clubcorner Aufgebot", unterschied)
-    else:
-        print("No changes found, skipping email.")
+        # Run the comparison
+        unterschied: str | None = compare_sections(inhalt_old, inhalt_new, old_file, new_file)
+
+        if inhalt_new != inhalt_old:
+            print(unterschied)
+            # Only send if there is actual text to send
+            if unterschied:
+                send_mail("Clubcorner Aufgebot", unterschied)
+        else:
+            print("No changes found, skipping email.")
 
 
-    write_in_txt_file(soup, "old_soup.txt")
-    time.sleep(2)
+        write_in_txt_file(soup, "old_soup.txt")
+        time.sleep(2)
+        print("finale")
     # write_in_csv_file(soup)
     # all_urls = get_all_href_from_urls(soup)
     # relevant_urls = filter_relevant_href(all_urls)
@@ -104,30 +116,30 @@ def main():
     #     write_in_csv_file(visible_break)
     #
     # close_csv_file()
-    driver_quit()
+    # driver_quit()
 
 # === Driver setup & start ===
-def driver_setup(url: str):
-    global driver
-    # options = undetected.ChromeOptions()
-    # driver = undetected.Chrome(version_main=145, options=options)
-    # _ = driver.maximize_window()
-    # _ = driver.implicitly_wait(2)
-    # _ = driver.get(url)
-    # _ = driver.implicitly_wait(3)
-    # _ = time.sleep(5)
-
-    # driver = Driver(uc=True, guest=True)
-
-    with SB(uc=True, test=True, guest=True) as driver:
-        url = "https://www.clubcorner.ch/users/sign_in"
-        driver.activate_cdp_mode(url)
-        driver.sleep(2)
-        driver.solve_captcha()
-        driver.wait_for_element_absent("input[disabled]")
-        driver.sleep(2)
-        driver.save_screenshot("debug_page.png")
-
+# def driver_setup(url: str):
+#     global driver
+#     # options = undetected.ChromeOptions()
+#     # driver = undetected.Chrome(version_main=145, options=options)
+#     # _ = driver.maximize_window()
+#     # _ = driver.implicitly_wait(2)
+#     # _ = driver.get(url)
+#     # _ = driver.implicitly_wait(3)
+#     # _ = time.sleep(5)
+#
+#     # driver = Driver(uc=True, guest=True)
+#
+#     with SB(uc=True, test=True, guest=True) as driver:
+#         url = "https://www.clubcorner.ch/users/sign_in"
+#         driver.activate_cdp_mode(url)
+#         driver.sleep(2)
+#         driver.solve_captcha()
+#         driver.wait_for_element_absent("input[disabled]")
+#         driver.sleep(2)
+#         driver.save_screenshot("debug_page.png")
+#
 
 # === Driver Quit ===
 def driver_quit():
@@ -175,7 +187,7 @@ def write_in_txt_file(soup: BeautifulSoup, filename: str) -> None:
 #             print('1')
 
 def get_page_source_and_create_soup():
-    page_source = driver.page_source
+    page_source = driver.get_page_source()
     soup = BeautifulSoup(page_source, 'html.parser')
     return soup
 
@@ -187,25 +199,37 @@ def find_insert_login():
     mail_cc_from_txt, pw_cc_from_txt, _, _, _, = get_credentials()
 
 
-    # now we search the mail element 
-    email_field = driver.find_element(By.ID, "user_email")
-    # Type directly into the element
-    _ = email_field.send_keys(mail_cc_from_txt)
-    # Now check the value
-    values_are: str | None = email_field.get_attribute('value')
-    assert values_are == mail_cc_from_txt
+    # 1. Type into the field (handles the 'find' and the 'wait' automatically)
+    driver.type("#user_email", mail_cc_from_txt)
+    # 2. Assert the value (built-in retry logic if the UI is slow)
+    driver.assert_text("#user_email", mail_cc_from_txt)
 
-    time.sleep(2)
+    # # now we search the mail element 
+    # email_field = driver.find_element(By.ID, "user_email")
+    # # Type directly into the element
+    # _ = email_field.send_keys(mail_cc_from_txt)
+    # # Now check the value
+    # values_are: str | None = email_field.get_attribute('value')
+    # assert values_are == mail_cc_from_txt
 
-    # now we search the mail element 
-    pw_field = driver.find_element(By.ID, "user_password")
-    # Type directly into the element
-    _ = pw_field.send_keys(pw_cc_from_txt)
-    # Now check the value
-    values_are: str | None = pw_field.get_attribute('value')
-    assert values_are == pw_cc_from_txt
+    time.sleep(1)
 
-    time.sleep(2)
+    # --- Password Field ---
+    # SeleniumBase finds By.ID automatically if you use the '#' prefix
+    driver.type("#user_password", pw_cc_from_txt)
+    driver.assert_text("#user_password", pw_cc_from_txt)
+
+    # # now we search the mail element 
+    # pw_field = driver.find_element(By.ID, "user_password")
+    # # Type directly into the element
+    # _ = pw_field.send_keys(pw_cc_from_txt)
+    # # Now check the value
+    # values_are: str | None = pw_field.get_attribute('value')
+    # assert values_are == pw_cc_from_txt
+
+    time.sleep(1)
+
+    driver.save_screenshot("credentials_written.png")
 
 def get_credentials():
     with open("pw.txt") as f:
@@ -218,9 +242,14 @@ def get_credentials():
 
 
 def press_anmelden():
-    mouse = ActionChains(driver)
-    anmelden_button = driver.find_element(By.ID, "devise-session-submit")
-    mouse.move_to_element(anmelden_button).click().perform()
+    # This automatically moves the mouse to the element and clicks it
+    driver.click("#devise-session-submit")
+    time.sleep(5)
+    driver.save_screenshot("main_page.png")
+# def press_anmelden():
+#     mouse = ActionChains(driver)
+#     anmelden_button = driver.find_element(By.ID, "devise-session-submit")
+#     mouse.move_to_element(anmelden_button).click().perform()
 
 
 def extract_and_clean(filename: str, start_word: str, end_word: str):
