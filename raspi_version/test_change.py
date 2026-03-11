@@ -203,7 +203,7 @@ def find_insert_login():
     # 1. Type into the field (handles the 'find' and the 'wait' automatically)
     driver.type("#user_email", mail_cc_from_txt)
     # 2. Assert the value (built-in retry logic if the UI is slow)
-    driver.assert_text("#user_email", mail_cc_from_txt)
+    driver.assert_text(mail_cc_from_txt, "#user_email")
 
     # # now we search the mail element 
     # email_field = driver.find_element(By.ID, "user_email")
