@@ -30,17 +30,17 @@ import re
 import difflib
 import smtplib
 # import undetected_chromedriver as undetected
-from email.message import EmailMessage
-# from selenium import webdriver
-# from webdriver_manager.firefox import GeckoDriverManager
-# from selenium.webdriver.firefox.service import Service
-# from selenium.webdriver.firefox.options import Options
-from selenium.webdriver import Keys, ActionChains
-from selenium.webdriver.common.by import By 
-from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
-from selenium.webdriver.common.actions.action_builder import ActionBuilder
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ECondition
+# from email.message import EmailMessage
+# # from selenium import webdriver
+# # from webdriver_manager.firefox import GeckoDriverManager
+# # from selenium.webdriver.firefox.service import Service
+# # from selenium.webdriver.firefox.options import Options
+# from selenium.webdriver import Keys, ActionChains
+# from selenium.webdriver.common.by import By 
+# from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
+# from selenium.webdriver.common.actions.action_builder import ActionBuilder
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as ECondition
 
 from seleniumbase import SB
 
