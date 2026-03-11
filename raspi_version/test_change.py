@@ -218,7 +218,7 @@ def find_insert_login():
     # --- Password Field ---
     # SeleniumBase finds By.ID automatically if you use the '#' prefix
     driver.type("#user_password", pw_cc_from_txt)
-    driver.assert_text("#user_password", pw_cc_from_txt)
+    driver.assert_text(pw_cc_from_txt, "#user_password")
 
     # # now we search the mail element 
     # pw_field = driver.find_element(By.ID, "user_password")
