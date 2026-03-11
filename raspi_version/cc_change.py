@@ -29,7 +29,7 @@ import time
 import re
 import difflib
 import smtplib
-import undetected_chromedriver as undetected
+# import undetected_chromedriver as undetected
 from email.message import EmailMessage
 # from selenium import webdriver
 # from webdriver_manager.firefox import GeckoDriverManager
