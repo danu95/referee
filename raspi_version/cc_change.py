@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
 
-neuer versuch!
-https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode
-from seleniumbase import SB
-
-with SB(uc=True, test=True, guest=True) as sb:
-    url = "www.planetminecraft.com/account/sign_in/"
-    sb.activate_cdp_mode(url)
-    sb.sleep(2)
-    sb.solve_captcha()
-    sb.wait_for_element_absent("input[disabled]")
-    sb.sleep(2)
-
-
-
+# neuer versuch!
+# https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode
+# from seleniumbase import SB
+#
+# with SB(uc=True, test=True, guest=True) as sb:
+#     url = "www.planetminecraft.com/account/sign_in/"
+#     sb.activate_cdp_mode(url)
+#     sb.sleep(2)
+#     sb.solve_captcha()
+#     sb.wait_for_element_absent("input[disabled]")
+#     sb.sleep(2)
 
 # === Must have ===
 # das ding muss wieder laufen
@@ -44,6 +41,21 @@ from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 from selenium.webdriver.common.actions.action_builder import ActionBuilder
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ECondition
+
+from seleniumbase import SB
+
+with SB(uc=True, test=True, guest=True) as sb:
+    url = "www.planetminecraft.com/account/sign_in/"
+    print("websetie geöffnet")
+    sb.activate_cdp_mode(url)
+    sb.sleep(2)
+    sb.solve_captcha()
+    print("solve captcha")
+    sb.wait_for_element_absent("input[disabled]")
+    sb.sleep(2)
+    print("done")
+    sb.save_screenshot("debug_page.png")
+    
 
 # === Main ===
 def main():
@@ -330,7 +342,7 @@ def send_mail(subject_mail: str, message_mail: str):
 
 
     
-main()
+# main()
 
 
 
