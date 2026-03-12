@@ -172,7 +172,7 @@ def select_SR():
     driver.click('a[href="/schiedsrichter/inspektionsergebnisse"]')
     
     # Optional: Wait for the heading of the new page to confirm navigation
-    driver.wait_for_text("SR Coaching Ergebnisse", "h2", timeout=10)
+    driver.wait_for_element("table", timeout=10)
 
 def extract_and_clean(filename: str, start_word: str, end_word: str):
     with open(filename, 'r', encoding='utf-8') as f:
