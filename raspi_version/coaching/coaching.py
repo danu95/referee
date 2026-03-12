@@ -216,7 +216,7 @@ def compare_sections(old_inhalt: list[str] | None, new_inhalt: list[str] | None,
             diff_output = '\n'.join(list(diff_list))
             return diff_output
     else:
-        print("Error: Markers ('Zukünftige...') not found or in wrong order in one or both files.")
+        print("Error: Markers ('...Beteiligung...') not found or in wrong order in one or both files.")
 
 
 def send_mail(subject_mail: str, message_mail: str):
