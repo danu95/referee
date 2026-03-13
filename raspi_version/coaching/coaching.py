@@ -168,8 +168,6 @@ def select_SR():
     driver.wait_for_element_clickable('a[href="/schiedsrichter/belegungsplan"]')
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
     
-    # 3. Optional: Wait for the page to load after selection
-    driver.wait_for_element_absent("#kontextmenue_aufklappen")
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
     driver.wait_for_element_clickable('a[href="/schiedsrichter/inspektionsergebnisse"]')
