@@ -64,6 +64,8 @@ def main():
         time.sleep(1)
 
         select_SR()
+        driver.save_screenshot("debug_page.png")
+
 
         soup = get_page_source_and_create_soup()
         write_in_txt_file(soup, "new_soup.txt")
@@ -163,12 +165,14 @@ def select_SR():
     # We use a partial link text selector or a CSS selector for the href.
     # The href "/schiedsrichter/belegungsplan" is the safest unique identifier here.
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
+    time.sleep(2)
     
     # 3. Optional: Wait for the page to load after selection
     driver.wait_for_element_absent("#kontextmenue_aufklappen")
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
     driver.click('a[href="/schiedsrichter/inspektionsergebnisse"]')
+    time.sleep(2)
     
     # Optional: Wait for the heading of the new page to confirm navigation
     driver.wait_for_element("table", timeout=10)
