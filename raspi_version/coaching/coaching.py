@@ -64,7 +64,7 @@ def main():
         time.sleep(1)
 
         select_SR()
-        driver.save_screenshot("debug_page.png")
+        # driver.save_screenshot("debug_page.png")
 
 
         soup = get_page_source_and_create_soup()
