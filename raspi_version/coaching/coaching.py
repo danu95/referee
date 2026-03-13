@@ -160,19 +160,20 @@ def select_SR():
     # 1. Click the dropdown toggle to open the menu
     # The ID 'kontextmenue_aufklappen' is unique, so we use that.
     driver.click("#kontextmenue_aufklappen")
+
     
     # 2. Click the "Schiedsrichter / Coach" link
     # We use a partial link text selector or a CSS selector for the href.
     # The href "/schiedsrichter/belegungsplan" is the safest unique identifier here.
+    driver.wait_for_element_clickable('a[href="/schiedsrichter/belegungsplan"]')
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
-    time.sleep(2)
     
     # 3. Optional: Wait for the page to load after selection
     driver.wait_for_element_absent("#kontextmenue_aufklappen")
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
+    driver.wait_for_element_clickable('a[href="/schiedsrichter/inspektionsergebnisse"]')
     driver.click('a[href="/schiedsrichter/inspektionsergebnisse"]')
-    time.sleep(2)
     
     # Optional: Wait for the heading of the new page to confirm navigation
     driver.wait_for_element("table", timeout=10)
