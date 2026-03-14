@@ -175,10 +175,9 @@ def select_SR():
     
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
-    driver.wait_for_element_clickable('a[href="/schiedsrichter/inspektionsergebnisse"]')
     driver.click('a[href="/schiedsrichter/inspektionsergebnisse"]')
     
-    # Optional: Wait for the heading of the new page to confirm navigation
+    
     time.sleep(5)
 
 def extract_and_clean(filename: str, start_word: str, end_word: str):
