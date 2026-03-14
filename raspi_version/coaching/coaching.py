@@ -168,7 +168,6 @@ def select_SR():
     # 2. Click the "Schiedsrichter / Coach" link
     # We use a partial link text selector or a CSS selector for the href.
     # The href "/schiedsrichter/belegungsplan" is the safest unique identifier here.
-    driver.wait_for_element_clickable('a[href="/schiedsrichter/belegungsplan"]')
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
     time.sleep(5)
 
