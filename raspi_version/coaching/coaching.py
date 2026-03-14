@@ -61,10 +61,13 @@ def main():
         find_insert_login()
         time.sleep(1)
         press_anmelden()
+        print("login ok")
+        driver.save_screenshot("login_ok.png")
         time.sleep(1)
 
         select_SR()
-        # driver.save_screenshot("debug_page.png")
+        print("final_page")
+        driver.save_screenshot("final_page.png")
 
 
         soup = get_page_source_and_create_soup()
@@ -174,7 +177,7 @@ def select_SR():
     driver.click('a[href="/schiedsrichter/inspektionsergebnisse"]')
     
     # Optional: Wait for the heading of the new page to confirm navigation
-    driver.wait_for_element("table", timeout=10)
+    time.sleep(5)
 
 def extract_and_clean(filename: str, start_word: str, end_word: str):
     with open(filename, 'r', encoding='utf-8') as f:
