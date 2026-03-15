@@ -169,15 +169,12 @@ def select_SR():
     # The href "/schiedsrichter/belegungsplan" is the safest unique identifier here.
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
     time.sleep(5)
-    print('belegungsplan_ok')
     # driver.window_size(1920,1080)
     
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
     driver.wait_for_element_clickable('a[href="/schiedsrichter/inspektionsergebnisse"]')
-    print('wait_click_ok')
     driver.wait_for_element_present('a[href="/schiedsrichter/inspektionsergebnisse"]')
-    print('wait_element_present')
     driver.click('a[href="/schiedsrichter/inspektionsergebnisse"]')
     
     
