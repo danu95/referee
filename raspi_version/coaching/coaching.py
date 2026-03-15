@@ -46,7 +46,7 @@ def main():
     end_w: str = 'ohne eigene Beteiligung'
 
     global driver
-    with SB(uc=True, test=True, guest=True) as driver:
+    with SB(uc=True, test=True, guest=True, window_size='1920,1080') as driver:
         url = "https://www.clubcorner.ch/users/sign_in"
         driver.activate_cdp_mode(url)
         driver.sleep(2)
@@ -170,7 +170,7 @@ def select_SR():
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
     time.sleep(5)
     print('belegungsplan_ok')
-    driver.window_size(1920,1080)
+    # driver.window_size(1920,1080)
     
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
