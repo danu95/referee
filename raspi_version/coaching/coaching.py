@@ -66,7 +66,6 @@ def main():
         time.sleep(1)
 
         select_SR()
-        print("final_page")
         driver.save_screenshot("final_page.png")
 
 
@@ -170,7 +169,8 @@ def select_SR():
     # The href "/schiedsrichter/belegungsplan" is the safest unique identifier here.
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
     time.sleep(5)
-
+    print('belegungsplan_ok')
+    driver.window_size(1920,1080)
     
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
