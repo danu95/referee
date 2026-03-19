@@ -11,9 +11,8 @@
 
 from email import charset
 from bs4 import BeautifulSoup
-import os
+import os, time, datetime, getpass
 import sys
-import time
 import re
 import difflib
 import smtplib
@@ -38,6 +37,11 @@ from seleniumbase import Driver
 # === Main ===
 def main():
 
+    now = datetime.datetime.now()
+    user = getpass.getuser()
+    file = os.path.basename(__file__) if "__file__" in globals() else "terminal"
+    print(f"[{now}] [{user}@{file}] Let's start!")
+
     url: str = "https://www.clubcorner.ch/users/sign_in"
     # csvFile: str = "changes.csv"
     old_file: str= 'old_soup.txt'
@@ -46,7 +50,7 @@ def main():
     end_w: str = 'ohne eigene Beteiligung'
 
     global driver
-    with SB(uc=True, test=True, guest=True) as driver:
+    with SB(uc=True, test=True, guest=True, window_size='1920,1080') as driver:
         url = "https://www.clubcorner.ch/users/sign_in"
         driver.activate_cdp_mode(url)
         driver.sleep(2)
@@ -66,7 +70,6 @@ def main():
         time.sleep(1)
 
         select_SR()
-        print("final_page")
         driver.save_screenshot("final_page.png")
 
 
@@ -170,14 +173,12 @@ def select_SR():
     # The href "/schiedsrichter/belegungsplan" is the safest unique identifier here.
     driver.click('a[href="/schiedsrichter/belegungsplan"]')
     time.sleep(5)
-
+    # driver.window_size(1920,1080)
     
     # This clicks the link that goes to inspection results
     # It corresponds to 'SR Coaching Ergebnisse' in your HTML
     driver.wait_for_element_clickable('a[href="/schiedsrichter/inspektionsergebnisse"]')
-    print('wait_click_ok')
     driver.wait_for_element_present('a[href="/schiedsrichter/inspektionsergebnisse"]')
-    print('wait_element_present')
     driver.click('a[href="/schiedsrichter/inspektionsergebnisse"]')
     
     
