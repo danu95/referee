@@ -11,9 +11,8 @@
 
 from email import charset
 from bs4 import BeautifulSoup
-import os
+import os, time, datetime, getpass
 import sys
-import time
 import re
 import difflib
 import smtplib
@@ -37,6 +36,11 @@ from seleniumbase import Driver
 
 # === Main ===
 def main():
+
+    now = datetime.datetime.now()
+    user = getpass.getuser()
+    file = os.path.basename(__file__) if "__file__" in globals() else "terminal"
+    print(f"[{now}] [{user}@{file}] Let's start!")
 
     url: str = "https://www.clubcorner.ch/users/sign_in"
     # csvFile: str = "changes.csv"

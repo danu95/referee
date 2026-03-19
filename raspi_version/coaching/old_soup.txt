@@ -22,9 +22,9 @@
    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2WZS73BP50');
   </script>
   <meta content="authenticity_token" name="csrf-param"/>
-  <meta content="40Ecs2Q4BYSyRAfCxg37Rocir0cuq5vgbb4nKpKDjqD7zxuNWiIkGPi3DKY3A60wVb3szcUXHw_uLrpbwh8PzA" name="csrf-token"/>
+  <meta content="bK7nkQpyzMLZ492e-1UYM70EG4SdHMjQ6Ornf3H2taEQFuKVvBY82ReiV43qC9_s6a0QSq52CtaKguyDOVDT5w" name="csrf-token"/>
   <meta content="de" name="locale"/>
-  <!-- a34fa35c0db4
+  <!-- 5a2152d63ef9
  -->
  </head>
  <body class="bootstrap-2 schiedsrichter-inspektionsergebnisse index active" style="">
@@ -1485,6 +1485,70 @@
         <div class="collapse in" id="andere-panel">
          <table class="table listing table-striped">
           <tbody>
+           <tr>
+            <td class="span1">
+             <span class="label label-umbruch">
+              Coaching-Bericht SR
+             </span>
+            </td>
+            <td class="span1">
+             <span class="label label-info">
+              108406
+             </span>
+            </td>
+            <td class="span2">
+             <i class="icon-calendar">
+             </i>
+             So 15.03.2026
+             <br/>
+             <i class="icon-time">
+             </i>
+             15:00
+            </td>
+            <td>
+             <div class="emblem team">
+              <div class="avatar">
+               <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/10204.gif"/>
+              </div>
+              <div class="text" rel="tooltip" title="Promotion League / -">
+               <div class="title">
+                <div class="abschneiden">
+                 FC Biel-Bienne 1896
+                </div>
+               </div>
+               <div class="subtitle">
+                <div class="abschneiden">
+                 PL / -
+                </div>
+               </div>
+              </div>
+             </div>
+            </td>
+            <td>
+             <div class="emblem team">
+              <div class="avatar">
+               <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/2700.gif"/>
+              </div>
+              <div class="text" rel="tooltip" title="Promotion League / -">
+               <div class="title">
+                <div class="abschneiden">
+                 FC Luzern U-21
+                </div>
+               </div>
+               <div class="subtitle">
+                <div class="abschneiden">
+                 PL / -
+                </div>
+               </div>
+              </div>
+             </div>
+            </td>
+            <td>
+             <a class="btn" href="/schiedsrichter/coaching_berichte/89177">
+              Details
+             </a>
+            </td>
+           </tr>
            <tr>
             <td class="span1">
              <span class="label label-umbruch">
@@ -3536,70 +3600,6 @@
            <tr>
             <td class="span1">
              <span class="label label-umbruch">
-              Coaching-Bericht SR
-             </span>
-            </td>
-            <td class="span1">
-             <span class="label label-info">
-              101144
-             </span>
-            </td>
-            <td class="span2">
-             <i class="icon-calendar">
-             </i>
-             Fr 07.11.2025
-             <br/>
-             <i class="icon-time">
-             </i>
-             19:30
-            </td>
-            <td>
-             <div class="emblem team">
-              <div class="avatar">
-               <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/9703.gif"/>
-              </div>
-              <div class="text" rel="tooltip" title="Challenge League / Phase 2">
-               <div class="title">
-                <div class="abschneiden">
-                 FC Stade Nyonnais SA
-                </div>
-               </div>
-               <div class="subtitle">
-                <div class="abschneiden">
-                 ChL / Phase 2
-                </div>
-               </div>
-              </div>
-             </div>
-            </td>
-            <td>
-             <div class="emblem team">
-              <div class="avatar">
-               <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/6701.gif"/>
-              </div>
-              <div class="text" rel="tooltip" title="Challenge League / Phase 2">
-               <div class="title">
-                <div class="abschneiden">
-                 Etoile Carouge FC
-                </div>
-               </div>
-               <div class="subtitle">
-                <div class="abschneiden">
-                 ChL / Phase 2
-                </div>
-               </div>
-              </div>
-             </div>
-            </td>
-            <td>
-             <a class="btn" href="/schiedsrichter/coaching_berichte/87311">
-              Details
-             </a>
-            </td>
-           </tr>
-           <tr>
-            <td class="span1">
-             <span class="label label-umbruch">
               Coaching-Bericht 4O
              </span>
             </td>
@@ -3657,6 +3657,70 @@
             </td>
             <td>
              <a class="btn" href="/schiedsrichter/coaching_berichte/87551">
+              Details
+             </a>
+            </td>
+           </tr>
+           <tr>
+            <td class="span1">
+             <span class="label label-umbruch">
+              Coaching-Bericht SR
+             </span>
+            </td>
+            <td class="span1">
+             <span class="label label-info">
+              101144
+             </span>
+            </td>
+            <td class="span2">
+             <i class="icon-calendar">
+             </i>
+             Fr 07.11.2025
+             <br/>
+             <i class="icon-time">
+             </i>
+             19:30
+            </td>
+            <td>
+             <div class="emblem team">
+              <div class="avatar">
+               <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/9703.gif"/>
+              </div>
+              <div class="text" rel="tooltip" title="Challenge League / Phase 2">
+               <div class="title">
+                <div class="abschneiden">
+                 FC Stade Nyonnais SA
+                </div>
+               </div>
+               <div class="subtitle">
+                <div class="abschneiden">
+                 ChL / Phase 2
+                </div>
+               </div>
+              </div>
+             </div>
+            </td>
+            <td>
+             <div class="emblem team">
+              <div class="avatar">
+               <img src="https://asanisdatapublicprd01.blob.core.windows.net/logos/Verein/6701.gif"/>
+              </div>
+              <div class="text" rel="tooltip" title="Challenge League / Phase 2">
+               <div class="title">
+                <div class="abschneiden">
+                 Etoile Carouge FC
+                </div>
+               </div>
+               <div class="subtitle">
+                <div class="abschneiden">
+                 ChL / Phase 2
+                </div>
+               </div>
+              </div>
+             </div>
+            </td>
+            <td>
+             <a class="btn" href="/schiedsrichter/coaching_berichte/87311">
               Details
              </a>
             </td>
