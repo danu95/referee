@@ -3,6 +3,12 @@ pw.txt
 .env
 *.log
 
+# --- Lock files ---
+*.lock
+!yarn.lock
+!package-lock.json
+!pnpm-lock.yaml
+
 # --- Python & Environment ---
 .venv/
 env/
