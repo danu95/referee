@@ -52,6 +52,9 @@ def main():
 
     global driver
     with SB(uc=True, test=True, guest=True) as driver:
+
+        print(f"[{now}] [{user}@{file}] Let's start!")
+
         url = "https://www.clubcorner.ch/users/sign_in"
         driver.activate_cdp_mode(url)
         driver.sleep(2)
@@ -136,7 +139,7 @@ def find_insert_login():
     # driver.save_screenshot("credentials_written.png")
 
 def get_credentials():
-    with open("pw.txt") as f:
+    with open("/home/daniel/git/referee/pw.txt") as f:
         mail_cc_from_txt: str = f.readline().strip()
         pw_cc_from_txt: str = f.readline().strip()
         from_mail_txt: str = f.readline().strip()
