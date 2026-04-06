@@ -18,6 +18,7 @@ import difflib
 import smtplib
 # import undetected_chromedriver as undetected
 from email.message import EmailMessage
+from pathlib import Path
 # # from selenium import webdriver
 # # from webdriver_manager.firefox import GeckoDriverManager
 # # from selenium.webdriver.firefox.service import Service
@@ -145,7 +146,8 @@ def find_insert_login():
     # driver.save_screenshot("credentials_written.png")
 
 def get_credentials():
-    with open("/home/daniel/git/referee/pw.txt") as f:
+    pw_file = Path.home() / "git/referee/pw.txt"
+    with open(pw_file) as f:
         mail_cc_from_txt: str = f.readline().strip()
         pw_cc_from_txt: str = f.readline().strip()
         from_mail_txt: str = f.readline().strip()
